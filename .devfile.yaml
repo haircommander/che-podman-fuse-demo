@@ -15,6 +15,11 @@ components:
     env:
     - name: VSCODE_DEFAULT_WORKSPACE
       value: "/projects/che-podman-fuse-demo/podman-fuse-demo.code-workspace"
+    image:
+      imageName: quay.io/cgruver0/che/podman-fuse:latest
+      autoBuild: true
+      dockerfile:
+        uri: podman-fuse.Containerfile
 - volume:
     size: 4Gi
   name: projects
