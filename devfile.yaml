@@ -1,13 +1,12 @@
 schemaVersion: 2.2.0
-metadata:
-  name: podman-fuse-demo
-  version: 2.2.0
 attributes:
   controller.devfile.io/storage-type: per-workspace
+metadata:
+  name: podman-fuse-demo
 components:
 - name: podman
   attributes:
-    pod-overrides: {"metadata": {"annotations": {"io.kubernetes.cri-o.Devices":"/dev/fuse","io.openshift.podman-fuse":""}}}
+    pod-overrides: {"metadata": {"annotations": {"io.kubernetes.cri-o.Devices":"/dev/fuse","io.openshift.podman-fuse":""}}, {"spec": {"securityContext": {"seLinuxOptions": {"type": "container_engine_t"}}}}}}
   container: 
     image: quay.io/cgruver0/che/podman-fuse:latest
     # image: image-registry.openshift-image-registry.svc:5000/podman-build/podman-fuse:latest
