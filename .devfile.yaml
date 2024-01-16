@@ -1,6 +1,7 @@
-schemaVersion: 2.2.2
+schemaVersion: 2.2.0
 metadata:
   name: podman-fuse-demo
+  schemaVersion: 2.2.0
 attributes:
   controller.devfile.io/storage-type: per-workspace
 components:
